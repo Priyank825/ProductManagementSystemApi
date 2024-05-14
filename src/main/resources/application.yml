@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/productinfo
+    username: root
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+    name: ProductManagementSystemApi
+  security:
+    user:
+      name: priyank
+      password: priyank
+
+logging:
+  level:
+    '[root]': INFO
+    '[org.springframework]': INFO
+    '[com.product]': DEBUG
+
+springdoc:
+  paths-to-match: /api/products/**
+  packages-to-scan: com.product.controller
+
+
